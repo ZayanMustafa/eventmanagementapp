@@ -1,21 +1,37 @@
+'use client';
 
+import { motion } from 'framer-motion';
+import { hoverScale, tapScale } from '@/lib/animation';
 
+export default function Button({ 
+  children, 
+  variant = 'primary', 
+  size = 'md', 
+  className = '',
+  ...props 
+}) {
+  const variants = {
+    primary: 'bg-cyan-600 hover:bg-cyan-700 text-white',
+    secondary: 'bg-sky-500 hover:bg-sky-600 text-white',
+    outline: 'border-2 border-cyan-600 text-cyan-600 hover:bg-cyan-50'
+  };
 
+  const sizes = {
+    sm: 'py-1 px-3 text-sm',
+    md: 'py-2 px-4 text-base',
+    lg: 'py-3 px-6 text-lg'
+  };
 
-const Button = ({ children, onClick, disabled = false, className = "" }) => {
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={`px-4 py-2 rounded-md font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors ${className} ${
-        disabled ? "opacity-50 cursor-not-allowed" : ""
-      }`}
+    <motion.button
+      {...hoverScale}
+      {...tapScale}
+      className={`rounded-lg font-medium transition-colors ${variants[variant]} ${sizes[size]} ${className}`}
+      {...props}
     >
       {children}
-    </button>
+    </motion.button>
   );
-};
-
-export default Button;
+}
 
 

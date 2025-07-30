@@ -1,6 +1,7 @@
 
 
 
+'use client'; 
 import { motion } from 'framer-motion';
 
 export const fadeIn = {
@@ -14,3 +15,15 @@ export const hoverScale = {
   transition: { type: 'spring', stiffness: 400 }
 };
 
+export const tapScale = {
+  whileTap: { scale: 0.95 }
+};
+
+export const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
