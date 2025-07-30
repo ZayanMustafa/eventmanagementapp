@@ -1,16 +1,15 @@
 
 "use client";
 
-import Button from "@/componets/ui/Button";
-import Card from "@/componets/ui/Card";
-import Input from "@/componets/ui/TextArea";
+import FeaturedEvents from "@/sections/mainpage/FeaturedEvents";
+import Hero from "@/sections/mainpage/Hero.js";
 
 export default function Home() {
   return (
  
     <>
-    <h1>Hello, World!</h1>
- 
+    <Hero />
+    <FeaturedEvents />
     </>
 
 
