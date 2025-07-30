@@ -2,7 +2,7 @@
 
 
 :root {
-  --primary: #6366F1;  /* Indigo */
+  --primary:  #00FFFF;  /* Cyan */
   --secondary: #F59E0B; /* Amber */
   --dark: #1E293B;
   --light: #F8FAFC;
@@ -20,7 +20,7 @@ body {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-  
+
 
 
 
