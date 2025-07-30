@@ -50,3 +50,22 @@ export const heroButtonAnim = {
 };
 
 
+// Not Found Page Animations
+
+export const notFoundAnim = {
+  initial: { opacity: 0, scale: 0.95 },
+  animate: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { 
+      duration: 0.6,
+      ease: "backOut"
+    } 
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.95,
+    transition: { duration: 0.3 }
+  }
+};
+

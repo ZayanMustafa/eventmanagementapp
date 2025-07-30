@@ -16,7 +16,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: 'SkillSphere | Master Tech Skills',
+  title: 'SkillSphere - Tech Events',
   description: 'Join workshops and courses to level up your career',
 };
 
