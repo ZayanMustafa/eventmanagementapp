@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${jakarta.variable}`}>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen select-none flex flex-col">
         <Navbar />
         <main className="flex-1">
           {children}

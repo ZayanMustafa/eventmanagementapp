@@ -1,10 +1,8 @@
-"use client";
-
+'use client';
 import { useState } from "react";
 import Input from "../ui/TextArea";
 import Button from "../ui/Button";
 import { EVENT_TYPES } from "@/constant/EventData";
-
 export default function EventRequestForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -42,9 +40,11 @@ export default function EventRequestForm() {
 
       {isSuccess ? (
         <div className="text-center py-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/10 rounded-full text-green-400 mb-4"></div>
-          <h4 className="text-xl font-medium mb-2">Request Received!</h4>
-          <p className="text-secondary">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/10 rounded-full text-green-400 mb-4">
+            ✓
+          </div>
+          <h4 className="text-xl font-medium mb-2 text-white">Request Received!</h4>
+          <p className="text-gray-300">
             Our team will contact you within 48 hours
           </p>
         </div>
@@ -54,6 +54,7 @@ export default function EventRequestForm() {
             <Input
               label="Your Name"
               value={formData.name}
+              className="text-white"
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
@@ -62,6 +63,7 @@ export default function EventRequestForm() {
             <Input
               label="Email"
               type="email"
+              className="text-white"
               value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
@@ -70,7 +72,7 @@ export default function EventRequestForm() {
             />
 
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-secondary mb-2">
+              <label className="block text-sm font-medium text-white mb-2">
                 Event Type
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -81,14 +83,14 @@ export default function EventRequestForm() {
                     onClick={() =>
                       setFormData({ ...formData, eventType: type.name })
                     }
-                    className={`p-4 rounded-lg border flex flex-col items-center ${
+                    className={`p-4 rounded-lg border flex flex-col items-center transition-colors ${
                       formData.eventType === type.name
-                        ? "border-cyan-400 bg-cyan-500/10 text-white"
-                        : "border-gray-700 hover:border-gray-600 text-white"
+                        ? "border-cyan-400 bg-cyan-500/10"
+                        : "border-gray-700 hover:border-gray-600"
                     }`}
                   >
                     <span className="text-cyan-400 mb-2">{type.icon}</span>
-                    <span className="font-medium">{type.name}</span>
+                    <span className="font-medium text-white">{type.name}</span>
                     <span className="text-xs text-gray-300 mt-1">
                       {type.desc}
                     </span>
@@ -114,7 +116,7 @@ export default function EventRequestForm() {
             disabled={isSubmitting || !formData.eventType}
             className="w-full"
           >
-            {isSubmitting ? <>Processing...</> : "Submit Request"}
+            {isSubmitting ? "Processing..." : "Submit Request"}
           </Button>
         </form>
       )}
