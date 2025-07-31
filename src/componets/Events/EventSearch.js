@@ -6,9 +6,11 @@
 'use client';
 
 import { useState } from 'react';
-import Input from '../TextArea';
-import Button from '../Button';
+// import Input from '../TextArea';
+// import Button from '../Button';
 import { EVENT_TYPES } from '@/constant/EventData';
+import Button from '../ui/Button';
+import Input from '../ui/TextArea';
 // import Input from '@/components/ui/Input';
 // import Button from '@/components/ui/Button';
 // import { EVENT_TYPES } from '@/constants/events';
@@ -46,7 +48,7 @@ export default function EventSearch({ onSearch }) {
           ))}
         </select>
         
-        <Button 
+        <Button
           type="submit"
           variant="primary"
           className="h-[42px]"

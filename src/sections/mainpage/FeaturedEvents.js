@@ -7,8 +7,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FEATURED_EVENTS } from '@/constant/EventData';
-import EventCard from '@/componets/ui/Events/EventCard';
-import EventSearch from '@/componets/ui/Events/EventSearch';
+import EventCard from '@/componets/Events/EventCard';
+import EventSearch from '@/componets/Events/EventSearch';
 
 export default function FeaturedEvents() {
   const [filteredEvents, setFilteredEvents] = useState(FEATURED_EVENTS);
@@ -33,7 +33,7 @@ export default function FeaturedEvents() {
       {filteredEvents.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredEvents.map(event => (
-            <EventCard key={event.id} event={event} />
+            <EventCard  key={event.id} event={event} />
           ))}
         </div>
       ) : (

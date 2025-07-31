@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/lib/animation';
-import Button from '../Button';
 import { useState } from 'react';
 // import Modal from './Modal'; 
-import EnrollmentForm from '@/componets/ui/Events/EventForm';
-import Modal from '../../model';
+import Modal from '../model';
+import Button from '../ui/Button';
+import EnrollmentForm from './EventForm';
 
 export default function EventCard({ event }) {
   const [showForm, setShowForm] = useState(false);
@@ -75,7 +75,7 @@ export default function EventCard({ event }) {
   title={`Enroll in ${event.title}`}
   size="md"
 >
-  <EnrollmentForm 
+  <EnrollmentForm
     event={event}
     onSuccess={() => setShowForm(false)}
   />
