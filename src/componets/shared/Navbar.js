@@ -17,12 +17,14 @@ export default function Navbar() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div 
+          <motion.a 
+            href="/"
+            initial={{ scale: 0.8 }}
             whileHover={{ scale: 1.05 }}
             className="text-3xl font-extrabold text-cyan-600"
           >
             SkillSphere
-          </motion.div>
+          </motion.a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-10">
@@ -36,9 +38,14 @@ export default function Navbar() {
                 {link.name}
               </motion.a>
             ))}
-            <Button variant="secondary" size="lg">
+            {/* <motion.a
+              href="/events"
+              whileHover={{ y: -2 }}
+              className="text-lg font-medium text-slate-700 hover:text-cyan-600 transition-colors"
+            >
               Register Now
-            </Button>
+            </motion.a> */}
+
           </nav>
         </div>
       </div>
