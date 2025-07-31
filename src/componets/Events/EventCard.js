@@ -1,9 +1,10 @@
-'use client';
 
+
+// File: src/componets/Events/EventCard.js
+'use client';
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/lib/animation';
 import { useState } from 'react';
-// import Modal from './Modal'; 
 import Modal from '../model';
 import Button from '../ui/Button';
 import EnrollmentForm from './EventForm';

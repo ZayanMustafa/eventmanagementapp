@@ -4,7 +4,6 @@
 'use client';
 
 import { useState } from 'react';
-// import { FaSpinner, FaCheck } from 'react-icons/fa';
 import Input from '../ui/TextArea';
 import Button from '../ui/Button';
 import { EVENT_TYPES } from '@/constant/EventData';

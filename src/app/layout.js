@@ -7,8 +7,6 @@ import Navbar from '@/componets/shared/Navbar';
 import './globals.css';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import Footer from '@/componets/shared/Footer';
-// import Navbar from '@/components/Navbar';
-// import Footer from '@/components/Footer';
 
 const jakarta = Plus_Jakarta_Sans({ 
   subsets: ['latin'],

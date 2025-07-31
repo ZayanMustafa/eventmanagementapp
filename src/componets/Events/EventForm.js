@@ -1,27 +1,25 @@
 
 
+// File: src/componets/Events/EventForm.js
 
 'use client';
-
 import Button from '@/componets/ui/Button';
 import Input from '@/componets/ui/TextArea';
 import { useState } from 'react';
-// import Input from './Input';
-// import Button from './Button';
 
 export default function EnrollmentForm({ event, onSuccess }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    eventId: event.id // Auto-filled
+    eventId: event.id 
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the data to your API
     console.log('Enrollment data:', formData);
-    onSuccess(); // Close the modal on success
+    onSuccess(); 
   };
 
   return (
