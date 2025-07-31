@@ -6,7 +6,7 @@
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/lib/animation';
-import CountUp from 'react-countup'; // npm install react-countup
+import CountUp from 'react-countup'; 
 
 export default function Milestone({ value, label, isNumber = true }) {
   return (

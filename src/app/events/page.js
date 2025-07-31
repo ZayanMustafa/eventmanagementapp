@@ -62,7 +62,7 @@ export default function EventsPage({ searchParams }) {
       {/* Events Grid */}
       {paginatedEvents.length > 0 ? (
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" // Added bottom margin
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" 
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"

@@ -1,17 +1,14 @@
+"use client";
 
-
-
-'use client';
-
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { fadeIn, staggerContainer } from '@/lib/animation';
-import Milestone from '@/componets/About/MileStone';
-import Button from '@/componets/ui/Button';
-import { ABOUT_DATA } from '@/constant/AboutData';
-import VisionCard from '@/componets/About/VisionCard';
-import TeamMember from '@/componets/About/TeamMember';
-import EventRequestForm from '@/componets/Events/EventRequestForm';
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "@/lib/animation";
+import Milestone from "@/componets/About/MileStone";
+import Button from "@/componets/ui/Button";
+import { ABOUT_DATA } from "@/constant/AboutData";
+import VisionCard from "@/componets/About/VisionCard";
+import TeamMember from "@/componets/About/TeamMember";
+import EventRequestForm from "@/componets/Events/EventRequestForm";
 
 export default function AboutPage() {
   return (
@@ -21,20 +18,24 @@ export default function AboutPage() {
       className="container py-12"
     >
       {/* Hero Section */}
-      <motion.section 
-        {...staggerContainer}
-        className="text-center mb-16"
-      >
-        <motion.h1 {...fadeIn} className="text-4xl md:text-6xl font-bold text-primary mb-6">
+      <motion.section {...staggerContainer} className="text-center mb-16">
+        <motion.h1
+          {...fadeIn}
+          className="text-4xl md:text-6xl font-bold text-primary mb-6"
+        >
           About SkillSphere
         </motion.h1>
-        <motion.p {...fadeIn} className="text-xl text-secondary max-w-3xl mx-auto">
-          Bridging the gap between classroom learning and real-world tech challenges
+        <motion.p
+          {...fadeIn}
+          className="text-xl text-secondary max-w-3xl mx-auto"
+        >
+          Bridging the gap between classroom learning and real-world tech
+          challenges
         </motion.p>
       </motion.section>
 
       {/* Founder Story */}
-      <motion.section 
+      <motion.section
         className="flex flex-col md:flex-row gap-12 items-center mb-20"
         {...fadeIn}
       >
@@ -52,12 +53,8 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-primary mb-4">
             Meet {ABOUT_DATA.owner.name}
           </h2>
-          <p className="text-lg text-secondary mb-4">
-            {ABOUT_DATA.owner.role}
-          </p>
-          <p className="text-secondary mb-6">
-            {ABOUT_DATA.owner.bio}
-          </p>
+          <p className="text-lg text-secondary mb-4">{ABOUT_DATA.owner.role}</p>
+          <p className="text-secondary mb-6">{ABOUT_DATA.owner.bio}</p>
           <Button variant="outline" asLink href="/contact">
             Connect With Me
           </Button>
@@ -70,81 +67,76 @@ export default function AboutPage() {
       </motion.section>
 
       {/* Milestones */}
-      <motion.section 
+      <motion.section
         className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <Milestone 
-          value={ABOUT_DATA.milestones.events} 
-          label="Events Held" 
-        />
-        <Milestone 
-          value={ABOUT_DATA.milestones.participants} 
-          label="Participants" 
+        <Milestone value={ABOUT_DATA.milestones.events} label="Events Held" />
+        <Milestone
+          value={ABOUT_DATA.milestones.participants}
+          label="Participants"
           isNumber={false}
         />
-        <Milestone 
-          value={ABOUT_DATA.milestones.partnerships} 
-          label="Industry Partners" 
+        <Milestone
+          value={ABOUT_DATA.milestones.partnerships}
+          label="Industry Partners"
         />
       </motion.section>
 
-        // Add these new sections after milestones:
+      {/* Team Section */}
+      <motion.section className="mb-20">
+        <h2 className="text-3xl font-bold text-primary mb-8 text-center">
+          Our Team
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {ABOUT_DATA.team.map((member, i) => (
+            <motion.div
+              key={i}
+              variants={fadeIn}
+              custom={i * 0.1}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <TeamMember member={member} />
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
 
-{/* Team Section */}
-<motion.section className="mb-20">
-  <h2 className="text-3xl font-bold text-primary mb-8 text-center">Our Team</h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {ABOUT_DATA.team.map((member, i) => (
-      <motion.div
-        key={i}
-        variants={fadeIn}
-        custom={i * 0.1}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
+      {/* Event Request Section */}
+      <motion.section
+        {...fadeIn}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20"
       >
-        <TeamMember member={member} />
-      </motion.div>
-    ))}
-  </div>
-</motion.section>
-
-{/* Event Request Section */}
-<motion.section 
-  {...fadeIn}
-  className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20"
->
-  <div>
-    <h2 className="text-3xl font-bold text-primary mb-4">Host With Us</h2>
-    <p className="text-secondary mb-6">
-      Want to organize a hackathon, seminar, or workshop? We partner with 
-      universities and companies to create impactful tech events.
-    </p>
-    <div className="space-y-4">
-      {ABOUT_DATA.eventTypes.map((type, i) => (
-        <div key={i} className="flex items-start gap-4">
-          <div className="p-2 bg-cyan-500/10 rounded-lg text-cyan-400 mt-1">
-            {type.icon}
-          </div>
-          <div>
-            <h4 className="font-medium text-primary">{type.name}</h4>
-            <p className="text-secondary text-sm">{type.desc}</p>
+        <div>
+          <h2 className="text-3xl font-bold text-primary mb-4">Host With Us</h2>
+          <p className="text-secondary mb-6">
+            Want to organize a hackathon, seminar, or workshop? We partner with
+            universities and companies to create impactful tech events.
+          </p>
+          <div className="space-y-4">
+            {ABOUT_DATA.eventTypes.map((type, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <div className="p-2 bg-cyan-500/10 rounded-lg text-cyan-400 mt-1">
+                  {type.icon}
+                </div>
+                <div>
+                  <h4 className="font-medium text-primary">{type.name}</h4>
+                  <p className="text-secondary text-sm">{type.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-  <EventRequestForm />
-</motion.section>
-
-
+        <EventRequestForm />
+      </motion.section>
 
       {/* CTA */}
-      <motion.section 
+      <motion.section
         {...fadeIn}
         className="text-center bg-surface rounded-xl p-12 border border-gray-700"
       >
