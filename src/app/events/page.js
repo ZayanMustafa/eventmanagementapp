@@ -80,7 +80,8 @@ export default function EventsPage() {
           className="text-center py-16 mb-16" // Added bottom margin
         >
           <p className="text-xl text-secondary">
-            No matching events found. Try adjusting your search filters.
+           Oops! No coding sessions available.
+          Try changing your search filters or check back soon for new developer events and workshops.
           </p>
         </motion.div>
       )}
