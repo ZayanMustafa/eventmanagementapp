@@ -2,7 +2,7 @@
 'use client';
 import EventForm from '@/componets/Admin/Events/EventForm';
 import EventList from '@/componets/Admin/Events/EventList';
-import EventRequests from '@/componets/Admin/Events/EventRequest';
+import EventRequests from '@/componets/Admin/Request/EventRequest';
 import { mockEventRequests, mockEvents } from '@/constant/AdminMocData';
 import { useState } from 'react';
 // import EventForm from './components/EventForm';
