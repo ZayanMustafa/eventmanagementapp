@@ -5,6 +5,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FaCheckCircle } from "react-icons/fa";
 // import { FaSpinner, FaCheck } from 'react-icons/fa';
 import Input from '../ui/TextArea';
 import Button from '../ui/Button';
@@ -39,7 +40,7 @@ export default function SupportForm() {
       {isSuccess ? (
         <div className="text-center py-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/10 rounded-full text-green-400 mb-4">
-            {/* <FaCheck className="text-2xl" /> */}
+            <FaCheckCircle className="text-2xl" />
           </div>
           <h4 className="text-xl font-medium mb-2">Message Sent!</h4>
           <p className="text-secondary">We&apos;ll respond within 24 hours</p>
