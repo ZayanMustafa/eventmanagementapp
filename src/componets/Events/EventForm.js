@@ -1,6 +1,4 @@
-
-
-// File: src/componets/Events/EventForm.js
+// File: src/components/Events/EventForm.js
 
 'use client';
 import Button from '@/componets/ui/Button';

@@ -1,10 +1,6 @@
-
-
-
-// File: src/componets/Events/EventSearch.js
+// File: src/components/Events/EventSearch.js
 
 'use client';
-
 import { useState } from 'react';
 import { EVENT_TYPES } from '@/constant/EventData';
 import Button from '../ui/Button';

@@ -81,7 +81,7 @@ export default function EventsPage() {
         >
           <p className="text-xl text-secondary">
            Oops! No coding sessions available.
-          Try changing your search filters or check back soon for new developer events and workshops.
+            Try changing your search filters or check back soon for new developer events and workshops.
           </p>
         </motion.div>
       )}

@@ -1,8 +1,6 @@
-
-// File: src/componets/Events/Pagination.js
+// File: src/components/Events/Pagination.js
 
 'use client';
-
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/lib/animation';
 import Link from 'next/link';

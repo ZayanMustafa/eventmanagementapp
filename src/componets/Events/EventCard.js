@@ -1,4 +1,5 @@
 // File: src/componets/Events/EventCard.js
+
 "use client";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/animation";
