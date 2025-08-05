@@ -9,6 +9,7 @@ import { ABOUT_DATA } from "@/constant/AboutData";
 import VisionCard from "@/componets/About/VisionCard";
 import TeamMember from "@/componets/About/TeamMember";
 import EventRequestForm from "@/componets/Events/EventRequestForm";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -146,9 +147,12 @@ export default function AboutPage() {
         <p className="text-secondary mb-8 max-w-2xl mx-auto">
           Join our next hackathon or workshop and get real industry experience.
         </p>
-        <Button size="lg" asLink href="/events">
-          Browse Upcoming Events
-        </Button>
+        <Link href="/events">
+          <Button size="lg" className="px-8 py-4">
+            View Upcoming Events
+          </Button>
+        </Link>
+
       </motion.section>
     </motion.main>
   );

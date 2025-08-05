@@ -8,8 +8,7 @@ import { motion } from 'framer-motion';
 import { heroImageAnim, heroTextAnim, heroButtonAnim } from '@/lib/animation';
 import { HERO_DATA } from '@/constant/HeroData';
 import Button from '@/componets/ui/Button';
-// import { HERO_DATA } from '@/constants/hero';
-// import Button from '@/components/ui/Button';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -19,6 +18,8 @@ export default function Hero() {
         {...heroImageAnim}
         className="absolute inset-0 z-0"
         style={{
+          height: '100%',
+          width: '100%',
           backgroundImage: `url(${HERO_DATA.backgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
@@ -45,14 +46,17 @@ export default function Hero() {
           </motion.p>
 
           <motion.div {...heroButtonAnim}>
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-4"
-              asLink
+            <Link
+              className="inline-block"
               href={HERO_DATA.ctaLink}
-            >
-              {HERO_DATA.ctaText}
-            </Button>
+              >
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 py-4"
+                >
+                  {HERO_DATA.ctaText}
+                </Button>
+              </Link>
           </motion.div>
 
           {/* Features List */}

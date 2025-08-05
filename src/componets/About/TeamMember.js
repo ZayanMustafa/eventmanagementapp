@@ -5,7 +5,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { fadeIn, hoverScale } from '@/lib/animation';
+import { hoverScale } from '@/lib/animation';
 
 export default function TeamMember({ member }) {
   return (

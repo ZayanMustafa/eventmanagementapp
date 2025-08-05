@@ -1,13 +1,12 @@
-
-
 // File: src/componets/Events/EventCard.js
-'use client';
-import { motion } from 'framer-motion';
-import { fadeIn } from '@/lib/animation';
-import { useState } from 'react';
-import Modal from '../model';
-import Button from '../ui/Button';
-import EnrollmentForm from './EventForm';
+"use client";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/lib/animation";
+import { useState } from "react";
+import Modal from "../model";
+import Button from "../ui/Button";
+import EnrollmentForm from "./EventForm";
+import Image from "next/image";
 
 export default function EventCard({ event }) {
   const [showForm, setShowForm] = useState(false);
@@ -22,13 +21,15 @@ export default function EventCard({ event }) {
 
   return (
     <>
-      <motion.div 
+      <motion.div
         {...fadeIn}
         className="card hover:shadow-xl transition-shadow"
       >
         <div className="h-48 overflow-hidden rounded-t-lg">
-          <img 
-            src={event.image} 
+          <Image
+            width={400}
+            height={200}
+            src={event.image}
             alt={event.title}
             className="w-full h-full object-cover"
           />
@@ -41,7 +42,7 @@ export default function EventCard({ event }) {
             </span>
           </div>
           <p className="text-secondary mb-4">{event.description}</p>
-          
+
           <div className="space-y-3 text-sm">
             <div className="flex items-center gap-2">
               <span>{new Date(event.date).toLocaleDateString()}</span>
@@ -49,10 +50,12 @@ export default function EventCard({ event }) {
             <div className="flex items-center gap-2">
               <span>{event.venue}</span>
             </div>
-            <div className={`flex items-center gap-2 ${
-              isFull ? 'text-red-400' : 'text-accent'
-            }`}>
-              {isFull ? 'Event Closed' : `${seatsLeft} seats left`}
+            <div
+              className={`flex items-center gap-2 ${
+                isFull ? "text-red-400" : "text-accent"
+              }`}
+            >
+              {isFull ? "Event Closed" : `${seatsLeft} seats left`}
             </div>
           </div>
 
@@ -62,25 +65,22 @@ export default function EventCard({ event }) {
             disabled={isFull}
             onClick={handleEnrollClick}
           >
-            {isFull ? 'Event Closed' : 'Enroll Now'}
+            {isFull ? "Event Closed" : "Enroll Now"}
           </Button>
         </div>
       </motion.div>
 
       {/* Enrollment Modal */}
       {showForm && (
-       // In your EventCard component
-<Modal
-  isOpen={showForm}
-  onClose={() => setShowForm(false)}
-  title={`Enroll in ${event.title}`}
-  size="md"
->
-  <EnrollmentForm
-    event={event}
-    onSuccess={() => setShowForm(false)}
-  />
-</Modal>
+        // In your EventCard component
+        <Modal
+          isOpen={showForm}
+          onClose={() => setShowForm(false)}
+          title={`Enroll in ${event.title}`}
+          size="md"
+        >
+          <EnrollmentForm event={event} onSuccess={() => setShowForm(false)} />
+        </Modal>
       )}
     </>
   );

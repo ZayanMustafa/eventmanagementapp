@@ -39,10 +39,10 @@ export default function SupportForm() {
       {isSuccess ? (
         <div className="text-center py-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/10 rounded-full text-green-400 mb-4">
-            <FaCheck className="text-2xl" />
+            {/* <FaCheck className="text-2xl" /> */}
           </div>
           <h4 className="text-xl font-medium mb-2">Message Sent!</h4>
-          <p className="text-secondary">We'll respond within 24 hours</p>
+          <p className="text-secondary">We&apos;ll respond within 24 hours</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -80,7 +80,7 @@ export default function SupportForm() {
           >
             {isSubmitting ? (
               <>
-                <FaSpinner className="animate-spin mr-2" />
+                {/* <FaSpinner className="animate-spin mr-2" /> */}
                 Sending...
               </>
             ) : (
