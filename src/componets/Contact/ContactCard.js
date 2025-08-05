@@ -6,6 +6,7 @@
 import { motion } from 'framer-motion';
 import { hoverScale } from '@/lib/animation';
 import Button from '../ui/Button';
+import Link from 'next/link';
 
 export default function ContactCard({ method }) {
   return (
@@ -20,14 +21,14 @@ export default function ContactCard({ method }) {
         <h3 className="text-xl font-bold text-primary">{method.title}</h3>
       </div>
       <p className="text-secondary mb-6">{method.description}</p>
-      <Button 
-        asLink 
-        href={method.link} 
-        variant="outline"
-        className="w-full"
+      <Link href={method.link} passHref>
+        <Button 
+          variant="outline"
+          className="w-full"
       >
         {method.action}
       </Button>
+      </Link>
     </motion.div>
   );
 }
