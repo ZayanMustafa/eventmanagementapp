@@ -1,4 +1,8 @@
 // File: src/app/events/page.jsx
+
+
+
+
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -77,7 +81,7 @@ export default function EventsPage() {
       ) : (
         <motion.div
           {...fadeIn}
-          className="text-center py-16 mb-16" // Added bottom margin
+          className="text-center py-16 mb-16" 
         >
           <p className="text-xl text-secondary">
            Oops! No coding sessions available.
@@ -85,6 +89,8 @@ export default function EventsPage() {
           </p>
         </motion.div>
       )}
+
+
 
       {/* Pagination */}
       {totalPages > 1 && (
