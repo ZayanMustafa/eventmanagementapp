@@ -43,4 +43,5 @@ next-env.d.ts
 # vs
 /.vscode
 .vscode-test
+.vscode/
 # local env files
