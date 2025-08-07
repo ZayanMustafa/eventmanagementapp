@@ -48,10 +48,10 @@ export default function ContactPage() {
         className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-6"
         {...fadeIn}
       >
-        {/* Left Column - Support Form */}
+        {/* Support Form */}
         <SupportForm />
 
-        {/* Right Column - Map and Info */}
+        {/* Map and Info */}
         <div className="space-y-6">
           {/* Map Section */}
           <div>
