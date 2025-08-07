@@ -1,14 +1,15 @@
-
-
-
 'use client';
 
 import { NAV_LINKS } from '@/constant/NavData';
 import { fadeIn } from '@/lib/animation';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
 import Button from '../ui/Button';
 
 export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <motion.header
       {...fadeIn}
@@ -38,18 +39,51 @@ export default function Navbar() {
                 {link.name}
               </motion.a>
             ))}
-            {/* <motion.a
-              href="/events"
-              whileHover={{ y: -2 }}
-              className="text-lg font-medium text-slate-700 hover:text-cyan-600 transition-colors"
-            >
-              Register Now
-            </motion.a> */}
-
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-slate-700 focus:outline-none"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <FiX className="w-6 h-6" />
+            ) : (
+              <FiMenu className="w-6 h-6" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden"
+            >
+              <nav className="flex flex-col space-y-4 py-4">
+                {NAV_LINKS.map((link) => (
+                  <motion.a
+                    key={link.path}
+                    initial={{ x: -20 }}
+                    animate={{ x: 0 }}
+                    exit={{ x: -20 }}
+                    href={link.path}
+                    className="text-lg font-medium text-slate-700 hover:text-cyan-600 transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </motion.a>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   );
 }
-
