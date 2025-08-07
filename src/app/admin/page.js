@@ -1,14 +1,14 @@
-// admin/page.js
+
+
+
+//File: app/admin/page.js
 'use client';
 import EventForm from '@/componets/Admin/Events/EventForm';
 import EventList from '@/componets/Admin/Events/EventList';
 import EventRequests from '@/componets/Admin/Request/EventRequest';
 import { mockEventRequests, mockEvents } from '@/constant/AdminMocData';
 import { useState } from 'react';
-// import EventForm from './components/EventForm';
-// import EventList from './components/EventList';
-// import EventRequests from './components/EventRequests';
-// import { mockEvents, mockEventRequests } from './utils/mockData';
+
 
 export default function AdminPage() {
   const [events, setEvents] = useState(mockEvents);
