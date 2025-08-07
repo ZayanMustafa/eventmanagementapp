@@ -14,7 +14,7 @@ export function FounderStory() {
       className="flex flex-col md:flex-row gap-12 items-center mb-20"
       initial="initial"
       animate="animate"
-      variants={fadeIn} // Changed this line
+      variants={fadeIn} 
     >
       <div className="md:w-1/3">
         <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-accent mx-auto">
