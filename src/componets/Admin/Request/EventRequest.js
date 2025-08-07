@@ -7,7 +7,6 @@ import { useState } from 'react';
 export default function EventRequests({ requests }) {
   const [expandedRequest, setExpandedRequest] = useState(null);
 
-  // Ensure requests is always an array and has unique ids
   const safeRequests = Array.isArray(requests) ? requests : [];
   
   return (
@@ -18,7 +17,7 @@ export default function EventRequests({ requests }) {
         <div className="space-y-4">
           {safeRequests.map(request => (
             <div 
-              key={request.id || request.email + request.date} // Fallback key
+              key={request.id || request.email + request.date} 
               className="border border-gray-700 rounded-lg p-4 hover:border-gray-600 transition-colors cursor-pointer"
               onClick={() => setExpandedRequest(expandedRequest === request.id ? null : request.id)}
             >
