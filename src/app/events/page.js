@@ -1,5 +1,7 @@
 
 
+
+
 // app/events/page.jsx
 "use client";
 import { useState, Suspense } from "react";

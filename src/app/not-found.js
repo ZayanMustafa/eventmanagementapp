@@ -1,7 +1,7 @@
 
+// File : src/app/not-found.js
 
-
-    import NotFound from "@/sections/not-found";
+import NotFound from "@/sections/not-found";
 
 
 export default function NotFoundPage() {
